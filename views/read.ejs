@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+
+<style>
+    @media(max-width:450px) {
+        .users {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
+<body class="bg-zinc-800 text-white p-5 ">
+    <h1 class="text-4xl font-[roboto]">All Users</h1>
+    <div class="users mt-10 flex gap-10">
+
+        <% if(users.length>0){%>
+            <% users.forEach((user)=> { %>
+                <div class="user w-[250px] p-4 bg-zinc-700 rounded-lg overflow-hidden ">
+                    <a href="/" class="text-gray-400"><span class="text-2xl">&#8962;</span> back to home</a>
+                    <div class="img h-[250px] w-full mt-4 rounded-lg overflow-hidden">
+                        <img src='<%= user.image%>' class="object-cover w-full h-[250px]" alt="">
+                    </div>
+                    <div class="details mt-4">
+                        <h3 class="text-2xl">
+                            <%=user.name%>
+                        </h3>
+                        <h5 class="text-sm text-gray-400">
+                            <%= user.email%>
+                        </h5>
+                    </div>
+                    <div class="route mt-8 flex justify-between">
+                        <a href="/edit/<%= user._id%>" class="bg-yellow-700 px-4 py-1 rounded-lg text-xs">Edit</a>
+                        <a href="/delete/<%= user._id%>" class="bg-red-700 px-3 py-1 rounded-lg text-xs">Delete</a>
+                    </div>
+                </div>
+                <% }) %>
+                    <% }else { %>
+                        <h1 class="text-gray-400">no user found!</h1>
+                        <a href="/" class="text-gray-400 block absolute top-44"><span class="text-2xl">&#8962;</span>
+                            back to
+                            home</a>
+
+                        <% }%>
+
+    </div>
+
+</body>
+
+</html>

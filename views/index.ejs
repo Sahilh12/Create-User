@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User Project</title>
+</head>
+
+<body class="font-[roboto]">
+
+
+
+    <div class="bg-zinc-900 min-h-screen flex justify-center items-center">
+        <div class="form bg-zinc-800 min-h-[400px] p-5 rounded-lg w-96 text-center">
+            <h1 class="text-5xl text-white">Create User</h1>
+            <hr class="mt-4">
+            <form action="/create" method="post" class="flex flex-col gap-4 mt-10 ">
+                <input class="px-3 py-2 rounded-lg outline-none" type="text" placeholder="name" name="name">
+                <input class="px-3 py-2 rounded-lg outline-none" type="text" placeholder="email" name="email">
+                <input class="px-3 py-2 rounded-lg outline-none" type="text" placeholder="image url" name="image">
+                <div class="submit mt-8">
+                    <input class="px-3 py-2 rounded-lg bg-blue-700 text-white cursor-pointer" type="submit"
+                        value="Create User">
+                    <a href="/read" class="px-3 ml-5 py-2 rounded-lg bg-zinc-600 text-white cursor-pointer">Show
+                        Users</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
